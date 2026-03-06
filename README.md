@@ -80,3 +80,17 @@ El script:
 - instala un override de color para el tema `maya`
 - fija `maya` como tema actual de SDDM
 - configura fuente y cursor del greeter
+
+## Chromium
+
+No versiono el perfil completo de Chromium, pero si dejo un script para aplicar el color del tema:
+
+```bash
+./apply-chromium-theme.sh
+```
+
+El script:
+
+- exige que Chromium este cerrado
+- aplica el azul principal `#7aa2f7`
+- actualiza el color del perfil local
