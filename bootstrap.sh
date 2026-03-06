@@ -4,11 +4,11 @@ set -euo pipefail
 
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$HOME/.config"
+TMUX_PLUGIN_DIR="$HOME/.tmux/plugins/tpm"
 
-link_config() {
-  local name="$1"
-  local source="$DOTFILES_DIR/.config/$name"
-  local target="$CONFIG_DIR/$name"
+link_path() {
+  local source="$1"
+  local target="$2"
 
   if [ ! -e "$source" ]; then
     echo "Missing source: $source" >&2
@@ -36,7 +36,31 @@ link_config() {
   echo "Linked: $target -> $source"
 }
 
+link_config() {
+  local name="$1"
+  link_path "$DOTFILES_DIR/.config/$name" "$CONFIG_DIR/$name"
+}
+
+link_home_file() {
+  local name="$1"
+  link_path "$DOTFILES_DIR/$name" "$HOME/$name"
+}
+
 mkdir -p "$CONFIG_DIR"
+
+link_home_file ".bashrc"
+link_home_file ".bash_profile"
+link_home_file ".zshrc"
+link_home_file ".npmrc"
 
 link_config "nvim"
 link_config "tmux"
+link_config "kitty"
+link_config "waybar"
+link_config "hypr"
+
+if [ ! -d "$TMUX_PLUGIN_DIR" ]; then
+  echo "TPM not found at $TMUX_PLUGIN_DIR"
+  echo "Install it with:"
+  echo "  git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_DIR"
+fi
