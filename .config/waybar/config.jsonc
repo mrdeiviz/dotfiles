@@ -26,13 +26,13 @@
       "*": 5
     },
     "format-icons": {
-      "active": "●",
+      "active": "◉",
       "default": "•"
     }
   },
   "clock": {
     "interval": 1,
-    "format": "{:%H:%M}",
+    "format": "󰥔 {:%H:%M}",
     "tooltip-format": "{:%A %d %B %Y}"
   },
   "battery": {
@@ -49,9 +49,9 @@
   },
   "network": {
     "interval": 5,
-    "format-wifi": "WiFi {signalStrength}%",
-    "format-ethernet": "ETH",
-    "format-disconnected": "No WiFi",
+    "format-wifi": "󰖩 {signalStrength}%",
+    "format-ethernet": "󰈀 ETH",
+    "format-disconnected": "󰖪 offline",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
     "tooltip-format-ethernet": "{ifname}",
     "tooltip-format-disconnected": "Sin conexion",

@@ -14,6 +14,10 @@ sudo pacman -S --needed \
   wl-clipboard \
   xdg-desktop-portal-hyprland \
   chromium \
+  sddm \
+  qt6-svg \
+  qt6-virtualkeyboard \
+  qt6-multimedia \
   ripgrep \
   fd \
   fzf \

@@ -19,7 +19,6 @@ Clona el repo en `~/dotfiles` y ejecuta:
 ./install-packages.sh
 ./bootstrap.sh
 ./post-install.sh
-./install-sddm-theme.sh
 ```
 
 El script crea enlaces simbolicos en `~/.config` para:
@@ -69,17 +68,43 @@ El script:
 
 ## Login Screen
 
-Para aplicar la personalizacion de SDDM con la misma paleta del resto del setup:
+Para SDDM uso `sddm-astronaut-theme` con un preset propio encima. Hazlo en dos pasos:
 
 ```bash
+./preview-sddm-theme.sh
 ./install-sddm-theme.sh
 ```
 
 El script:
 
-- instala un override de color para el tema `maya`
-- fija `maya` como tema actual de SDDM
+- clona `sddm-astronaut-theme`
+- instala un preset custom `deivid-minimal.conf`
+- fija `sddm-astronaut-theme` como tema actual de SDDM
 - configura fuente y cursor del greeter
+
+Dependencias recomendadas para SDDM:
+
+- `sddm`
+- `qt6-svg`
+- `qt6-virtualkeyboard`
+- `qt6-multimedia`
+
+`preview-sddm-theme.sh` no toca tu configuracion del sistema; solo abre `sddm-greeter-qt6 --test-mode` con el preset custom.
+
+Si alguna vez el login grafico falla, vuelve rapido a un tema seguro con:
+
+```bash
+./restore-sddm-safe.sh
+```
+
+## Wallpapers
+
+Mantengo dos variantes del mismo fondo:
+
+- escritorio: `/home/deivid/Pictures/wallpapers/minimal-dark-unsplash.jpg`
+- login: `/home/deivid/Pictures/wallpapers/minimal-dark-login.jpg`
+
+La del login es una version mas oscura para que el formulario de SDDM tenga mejor contraste.
 
 ## Chromium
 
