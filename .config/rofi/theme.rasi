@@ -1,0 +1,114 @@
+* {
+  bg:            #111111ee;
+  bg-alt:        #17191dee;
+  bg-soft:       #1d2128ee;
+  fg:            #e8e8e8ff;
+  fg-muted:      #8f96a3ff;
+  border:        #303030ff;
+  accent:        #7aa2f7ff;
+  accent-2:      #7dcfffff;
+  urgent:        #f7768eff;
+  ok:            #9ece6aff;
+  selected:      #18202cff;
+  font-main:     "Open Sans 14";
+  font-display:  "Orbitron 18";
+}
+
+window {
+  width: 760px;
+  border: 1px;
+  border-color: @border;
+  border-radius: 20px;
+  background-color: @bg;
+  transparency: "real";
+}
+
+mainbox {
+  children: [inputbar, listview, mode-switcher];
+  spacing: 14px;
+  padding: 18px;
+  background-color: transparent;
+}
+
+inputbar {
+  spacing: 10px;
+  padding: 12px 14px;
+  border: 1px;
+  border-radius: 14px;
+  border-color: @border;
+  background-color: @bg-alt;
+  text-color: @fg;
+}
+
+prompt {
+  enabled: true;
+  font: @font-display;
+  text-color: @accent-2;
+  background-color: transparent;
+  str: "system://";
+}
+
+entry {
+  placeholder: "launch applications";
+  placeholder-color: @fg-muted;
+  text-color: @fg;
+  background-color: transparent;
+  cursor: text;
+}
+
+listview {
+  lines: 6;
+  columns: 1;
+  fixed-height: false;
+  dynamic: true;
+  scrollbar: false;
+  spacing: 8px;
+  background-color: transparent;
+}
+
+element {
+  padding: 10px 12px;
+  border: 1px;
+  border-radius: 12px;
+  border-color: transparent;
+  background-color: rgba(255, 255, 255, 0.018);
+  text-color: @fg-muted;
+}
+
+element selected {
+  background-color: @selected;
+  border-color: rgba(122, 162, 247, 0.28);
+  text-color: @fg;
+}
+
+element-icon {
+  size: 22px;
+  background-color: transparent;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  font: @font-main;
+  vertical-align: 0.5;
+}
+
+mode-switcher {
+  spacing: 8px;
+  background-color: transparent;
+}
+
+button {
+  padding: 8px 12px;
+  border: 1px;
+  border-radius: 999px;
+  border-color: @border;
+  background-color: @bg-soft;
+  text-color: @fg-muted;
+}
+
+button selected {
+  background-color: @accent;
+  border-color: @accent;
+  text-color: #111111ff;
+}

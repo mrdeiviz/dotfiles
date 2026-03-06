@@ -1,5 +1,6 @@
 .config/tmux/plugins/
 .config/nvim/.DS_Store
+.config/nvim/.nvimlog
 *.swp
 *.swo
 *~

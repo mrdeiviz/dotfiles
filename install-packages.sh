@@ -18,6 +18,7 @@ sudo pacman -S --needed \
   qt6-svg \
   qt6-virtualkeyboard \
   qt6-multimedia \
+  rofi \
   ripgrep \
   fd \
   fzf \
