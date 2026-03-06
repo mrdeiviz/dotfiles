@@ -1,3 +1,32 @@
+local function has(executable)
+	return vim.fn.executable(executable) == 1
+end
+
+local function installed_tools()
+	local tools = {
+		"typescript-language-server",
+		"eslint_d",
+		"prettierd",
+		"shfmt",
+		"shellcheck",
+		"hadolint",
+	}
+
+	if has("unzip") then
+		table.insert(tools, "stylua")
+	end
+
+	if has("luarocks") then
+		table.insert(tools, "luacheck")
+	end
+
+	if has("go") then
+		table.insert(tools, "gofumpt")
+	end
+
+	return tools
+end
+
 return {
 	{
 		"mason-org/mason-lspconfig.nvim",
@@ -19,18 +48,8 @@ return {
 			"mason-org/mason.nvim",
 			"mason-org/mason-lspconfig.nvim",
 		},
-			opts = {
-				ensure_installed = {
-					"typescript-language-server",
-					"eslint_d",
-					"prettierd",
-					"stylua",
-					"luacheck",
-					"shfmt",
-					"shellcheck",
-					"hadolint",
-					"gofumpt",
-				},
+		opts = {
+			ensure_installed = installed_tools(),
 			run_on_start = true,
 		},
 	},
