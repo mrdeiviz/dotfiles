@@ -1,0 +1,70 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "margin-top": 6,
+  "margin-left": 8,
+  "margin-right": 8,
+  "spacing": 8,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "bluetooth",
+    "network",
+    "battery"
+  ],
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "all-outputs": false,
+    "active-only": false,
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "format-icons": {
+      "active": "●",
+      "default": "•"
+    }
+  },
+  "clock": {
+    "interval": 1,
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A %d %B %Y}"
+  },
+  "battery": {
+    "interval": 10,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "󰁹 {capacity}%",
+    "format-charging": "󰂄 {capacity}%",
+    "format-plugged": "󰂄 {capacity}%",
+    "tooltip": false,
+    "on-click": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+  },
+  "network": {
+    "interval": 5,
+    "format-wifi": "WiFi {signalStrength}%",
+    "format-ethernet": "ETH",
+    "format-disconnected": "No WiFi",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+    "tooltip-format-ethernet": "{ifname}",
+    "tooltip-format-disconnected": "Sin conexion",
+    "on-click": "kitty --class floatterm --override confirm_os_window_close=0 -e impala"
+  },
+  "bluetooth": {
+    "format": "",
+    "format-disabled": " off",
+    "format-off": " off",
+    "format-on": "",
+    "format-connected": "",
+    "tooltip-format": "{controller_alias}",
+    "tooltip-format-connected": "{controller_alias}\n{num_connections} conectado(s)",
+    "on-click": "kitty --class floatterm --override confirm_os_window_close=0 -e bluetui"
+  }
+}
