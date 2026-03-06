@@ -19,6 +19,7 @@ Clona el repo en `~/dotfiles` y ejecuta:
 ./install-packages.sh
 ./bootstrap.sh
 ./post-install.sh
+./install-sddm-theme.sh
 ```
 
 El script crea enlaces simbolicos en `~/.config` para:
@@ -65,3 +66,17 @@ El script:
 - deja tmux listo para instalar plugins
 - sincroniza plugins de Neovim
 - ejecuta Mason y Treesitter en modo headless
+
+## Login Screen
+
+Para aplicar la personalizacion de SDDM con la misma paleta del resto del setup:
+
+```bash
+./install-sddm-theme.sh
+```
+
+El script:
+
+- instala un override de color para el tema `maya`
+- fija `maya` como tema actual de SDDM
+- configura fuente y cursor del greeter
