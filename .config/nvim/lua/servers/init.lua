@@ -1,3 +1,4 @@
+local servers = require("servers.list")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Language Server Protocol (LSP)
@@ -14,16 +15,4 @@ require("servers.yamlls")(capabilities)
 require("servers.tailwindcss")(capabilities)
 
 -- Linters & Formatters
-vim.lsp.enable({
-  'lua_ls',
-  'pyright',
-  'gopls',
-  'jsonls',
-  'ts_ls',
-  'bashls',
-  'clangd',
-  'dockerls',
-  'emmet_ls',
-  'yamlls',
-  'tailwindcss',
-})
+vim.lsp.enable(servers)

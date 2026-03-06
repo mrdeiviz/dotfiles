@@ -10,7 +10,7 @@ sudo pacman -S --needed \
   kitty \
   waybar \
   hyprland \
-  hyprpaper \
+  swww \
   wl-clipboard \
   xdg-desktop-portal-hyprland \
   chromium \

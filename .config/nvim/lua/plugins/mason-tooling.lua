@@ -1,3 +1,5 @@
+local servers = require("servers.list")
+
 local function has(executable)
 	return vim.fn.executable(executable) == 1
 end
@@ -35,9 +37,7 @@ return {
 			"neovim/nvim-lspconfig",
 		},
 		opts = {
-			ensure_installed = {
-				"ts_ls",
-			},
+			ensure_installed = servers,
 			-- LSP activation is handled explicitly in lua/servers/init.lua.
 			automatic_enable = false,
 		},

@@ -106,6 +106,15 @@ Mantengo dos variantes del mismo fondo:
 
 La del login es una version mas oscura para que el formulario de SDDM tenga mejor contraste.
 
+En SDDM esa imagen se copia dentro del propio theme durante la instalacion para que el usuario `sddm` pueda leerla.
+
+En escritorio uso `swww`, no `hyprpaper`.
+
+Hyprland arranca:
+
+- `swww-daemon`
+- `~/.config/hypr/scripts/set-wallpaper.sh`
+
 ## Chromium
 
 No versiono el perfil completo de Chromium, pero si dejo un script para aplicar el color del tema:
