@@ -85,6 +85,6 @@
   "custom/power": {
     "format": "⏻",
     "tooltip": false,
-    "on-click": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
+    "on-click": "~/.config/waybar/scripts/power-menu.sh"
   }
 }
