@@ -16,7 +16,8 @@
     "bluetooth",
     "pulseaudio",
     "network",
-    "battery"
+    "battery",
+    "custom/power"
   ],
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -80,5 +81,10 @@
     },
     "tooltip": false,
     "scroll-step": 5
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch exit"
   }
 }
