@@ -15,6 +15,7 @@ window#waybar {
 #battery,
 #network,
 #bluetooth,
+#pulseaudio,
 #clock,
 #workspaces {
   background: rgba(17, 17, 17, 0.88);
@@ -53,8 +54,13 @@ window#waybar {
 }
 
 #bluetooth,
-#network {
+#network,
+#pulseaudio {
   color: #cfcfcf;
+}
+
+#pulseaudio.muted {
+  color: #e0af68;
 }
 
 #battery {
